@@ -118,15 +118,15 @@
 
 
 //  // REST operator
-function sortArgs(arg1, arg2, ...argsRest) {
+// function sortArgs(arg1, arg2, ...argsRest) {
 
-//   console.log(args)
-  console.log(arg1);
-  console.log(arg2);
-  console.log(argsRest);
-  console.log(...argsRest)
-  return argsRest.sort()
-}
+// //   console.log(args)
+//   console.log(arg1);
+//   console.log(arg2);
+//   console.log(argsRest);
+//   console.log(...argsRest)
+//   return argsRest.sort()
+// }
 
 // // console.log(sortArgs(1,2,3,4,6,7,8,9,9,6))
 
@@ -260,12 +260,12 @@ function sortArgs(arg1, arg2, ...argsRest) {
 // const maxNumber = (a,b) => a>b ? a : b
 // console.log(maxNumber(5,1));
 
-function recursion (num) {
-    if(num < 2){
-        return 1;
-    }
+// function recursion (num) {
+//     if(num < 2){
+//         return 1;
+//     }
 
-    return num * recursion(num - 1);
-}
+//     return num * recursion(num - 1);
+// }
 
-console.log(recursion(5))
+// console.log(recursion(5))
