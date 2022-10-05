@@ -388,14 +388,14 @@
 // }
 
 // // do while - First run then check
-let i = 3;
-do {
-    console.log(i);
-} while (i < 3);
+// let i = 3;
+// do {
+//     console.log(i);
+// } while (i < 3);
 
-while(i < 3){
-    console.log(i)
-}
+// while(i < 3){
+//     console.log(i)
+// }
 
 // while (i < 3) {  // (condition)
 //     console.log(i);
