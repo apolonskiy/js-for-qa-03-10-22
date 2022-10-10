@@ -43,6 +43,20 @@
 //     ...fields,
 // }
 
+
+
+// Function declaration flows up 
+
+// console.log(arrowFunc())
+// console.log(classic())
+
+// const arrowFunc = () => true;
+
+// function classic () {
+//     return false
+// }
+
+
 // const post = {
 //     title: 123,
 //     'User agent':  {
@@ -50,7 +64,7 @@
 //         text: "it is interesting"
 //     },
 //     arr: [1,2,3],
-//     iLive: true,
+//     isLive: true,
 //     someFunction: function() { 
 //         setTimeout(() => {
 //             console.log(this)
@@ -85,6 +99,27 @@
 // Shallow Copy
 // const copyPost = {...post}
 // const copyPost = Object.assign({}, post)
+
+// copyPost.title = 'ANDRII';
+// copyPost['User agent'].name = 'Mykhailo' 
+// copyPost.arr[0] = 'Mykhailo' 
+// console.log(copyPost)
+// console.log(post)
+
+
+
+// const post = {
+//     title: 123,
+//     'User agent':  {
+//         name: "Andrii",
+//         text: "it is interesting"
+//     },
+//     arr: [1,2,3],
+//     iLive: true
+// }
+// const obj2 = {
+//     newField: 'abc'
+// }
 
 // // Deep copy object
 // console.log(typeof JSON.stringify(post))
@@ -160,87 +195,6 @@
 // console.log(myObj?.additionalField?.newField?.test?.test)
 
 
-
-
-
-// Practice part
-// --------------------------
-
-// SPREAD / COPY object
-// const a = [1,2,3];
-// const b = {a, b: 'text', c: {d: '123', e: null}}
-// const c = {...b}
-// const c2 = Object.assign({}, b);
-
-// b.a = 'NEW';
-// console.log(c2)
-// console.log(b)
-// console.log(c);
-
-
-// REST operator
-// function sortArgs(arg1, ...args) {
-
-//   console.log(args)
-//   someOtherFunc(args);
-//   console.log(arg1);
-//   return args.sort()
-// }
-// console.log(sortArgs(1,2,3,1,5,6,7,7,8))
-
-// SPREAD for arrays
-// const a = ['1', '2', '1'];
-// const w = a;
-// const q = [...a];
-// q[1] = 'SOME S}THING'
-// a[0] = 'WWWW'
-
-// console.log(a);
-// console.log(w);
-// console.log(q);
-// console.log(sortArgs(...a));
-
-// const object = {
-//   test: "smth",
-//   age: 23,
-//   obj: {
-//     "internal": ['value']
-//   },
-//   logString: () => {
-//     console.log('test')
-//     // return('some value')
-//   }
-// }
-
-// console.log(object)
-
-
-// const json = JSON.stringify(object)
-
-// console.log(typeof object);
-
-// console.log(json);
-
-// console.log(JSON.parse(json))
-
-
-// DESTRUCTURE OBJECT< SHOW IT!!!!
-
-
-// function generateObj(addfield = true) {
-//   const obj =  {
-//     testField: 'test'
-//   }
-// if(addfield){
-//   return Object.assign({}, obj, {additionalField: {newField: 'It exists!'}})
-// } else{
-//   return obj;
-// }
-// }
-
-
-// // expect(generateObj(false).additionalField.newField).eql(200);
-// console.log(generateObj(false)?.additionalField?.newField);
 
 
 // const obj1 = {
