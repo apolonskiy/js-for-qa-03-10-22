@@ -1,7 +1,34 @@
+// const post = {
+// 	title: "string111",
+// 	'!@#$': {
+// 		firstName: "string",
+// 		lastName: "string"
+// 	},
+// 	isLive: true,
+//   // someFunction() {
+//   //   console.log(this);
+//   // }
+//   // someFunction: function() {
+//   //   console.log(this.title);
+//   // }
+//   someFunction: () => {
+//     console.log(this)
+//   }
+// }
+
+// console.log(this)
+// // console.log(post.title)
+// // console.log(post['!@#$'].firstName)
+// // console.log(post['!@#$']['firstName'])
+// post.someFunction()
+
+
+
 // function sayHello(color) {
 //     switch(color){
 //         case 'green':
 //             return 'green light'
+
 //         case 'yellow':
 //         case 'red':
 //             return 'stop'
@@ -12,21 +39,52 @@
 //     const result = sayHello('yellow'); // function call
 //     console.log(result)
 
-// Regular function example
-// function myRegularFnc() {
-//     console.log("I'm a regular function")
-//   }
+//   ()
+
+// const inputData = prompt('Fill in your comma-separated values')
+
+// // // Regular function example
+// function printInput() {
+  // console.log(arguments);
+//   const args = [...arguments]
+//   args.forEach(item => {
+//     console.log(item)
+//   })
+// }
+
+// printInput(1,2,3,45)
   
 //   // Arrow function example
-// const myArrowFnc = () => Boolean(1) ? 'text1' : 'text2';
+// const myArrowFnc = () => Boolean(0) ? 'text1' : 'text2';
 
-//   myRegularFnc()
-//   console.log(myArrowFnc())
+
+// const generageObj = (name, lastName) => ({name, lastName})
+
+// const generageObj1 = (name, lastName) => {
+// return {
+//   name,
+//   lastName,
+//   schoolNo: 52,
+//   yearOfGraduation: 1993
+// }
+// }
+
+// console.log(generageObj("andrii", 'Polonskyi'))
+// console.log(generageObj1(undefined, 'Polonskyi'))
+
+// // REST operator
+// const myArrowFnc = (arg1, arg2, ...argsRest) => {
+//   console.log(arg1)
+//   console.log(arg2)
+//   console.log(argsRest)
+//   return Boolean(0) ? 'text1' : 'text2';
+// }
+// console.log(myArrowFnc(1,2,3,4,5))
 
 
 // function myRegularFnc() {
-//     console.log(this)
-//   }
+//     console.log(this === globalThis)
+// }
 
 // const arrowFn = () => {
 //     console.log(this)
@@ -61,27 +119,38 @@
 //     title: 123,
 //     'User agent':  {
 //         name: "Andrii",
-//         text: "it is interesting"
+//         text: "it is interesting",
+//         someFunc2: () => {
+//           console.log(this);
+//         }
 //     },
 //     arr: [1,2,3],
 //     isLive: true,
 //     someFunction: function() { 
-//         setTimeout(() => {
+//       console.log(this)
+//         setTimeout( () => {
 //             console.log(this)
 //         }, 1000)
-//         console.log(this)
 //         console.log('some text')
 //         return 'some value'
-//     }
+//     },
+
 // }
+// post['User agent'].someFunc2()
+
+// post.someFunction()
+
+// const arr = [1, 2, 3]
 
 // const arrObj = {
 //     0: 1,
 //     1: 2,
 //     2: 3
 // }
+// console.log(arr)
+// console.log(arrObj)
 
-// console.log(typeof post.arr)
+// // console.log(typeof post.arr)
 
 // const post = {
 //     title: 123,
@@ -93,21 +162,38 @@
 //     iLive: true
 // }
 // const obj2 = {
-//     newField: 'abc'
+//     newField: 'abc',
+//     iLive: 'ABCD'
 // }
-
-// Shallow Copy
+// console.log(...post.arr)
+// // Shallow Copy
 // const copyPost = {...post}
-// const copyPost = Object.assign({}, post)
+// // console.log(copyPost)
+// const copyPost1 = Object.assign({}, post)
+// console.log(copyPost1)
+
+// const mergedObj = Object.assign(obj2, post, {}, {iLive: 654});
+// console.log(mergedObj)
+
+
+// const post = {
+//   title: 123,
+//   'User agent':  {
+//       name: "Andrii",
+//       text: "it is interesting"
+//   },
+//   arr: [1,2,3],
+//   iLive: true
+// }
+// const copyPost = {...post}
 
 // copyPost.title = 'ANDRII';
 // copyPost['User agent'].name = 'Mykhailo' 
-// copyPost.arr[0] = 'Mykhailo' 
+// copyPost.arr[0] = 'Mykola' 
 // console.log(copyPost)
 // console.log(post)
 
 
-
 // const post = {
 //     title: 123,
 //     'User agent':  {
@@ -121,7 +207,7 @@
 //     newField: 'abc'
 // }
 
-// // Deep copy object
+// // // Deep copy object
 // console.log(typeof JSON.stringify(post))
 // const copyPost = JSON.parse(JSON.stringify(post));
 
@@ -136,14 +222,29 @@
 // const title = 'some title'
 
 // const post = {
-//     title: 123,
+//     title,
 //     comment:  {
 //         name: "Andrii",
 //         text: "it is interesting"
 //     },
-//     arr: [1,2,3],
+//     arrNBC: [1,2,3],
 //     iLive: true
 // }
+
+// console.log(post.title)
+
+// const {title: titleUser, comment: {text, name}} = post; // const text = post.comment.text; const name = post.comment.name
+// console.log(text, name)
+
+// console.log(titleUser)
+
+// const arr1 = [1, 2, 'Anp'];
+// const        [b, a, c] = arr1
+
+// console.log(c)
+
+// const [dog, cat] = ['cat', 'dog'];
+
 
 // const {title: newTitleField, comment: {name: commentName}} = post;
 // console.log(newTitleField)
@@ -166,12 +267,18 @@
 // // console.log(sortArgs(1,2,3,4,6,7,8,9,9,6))
 
 
-// // SPREAD for arrays
-// const a = ['1', '2', '1', '4'];
+// SPREAD for arrays
+// const a = ['1', '2', '1', '4', {name: { test: 'TEST' }}];
 // const w = a;
 // const q = [...a];
 // q[1] = 'SOME S}THING'
 // a[0] = 'WWWW'
+// const objCopy = {...a[4]};
+// console.log(objCopy)
+// objCopy.name.test='!@#$%^&*'
+// console.log(a);
+// q[4].name.test='BBBBBBB'
+// q[4] = 'qwe'
 
 // console.log(a);
 // console.log(w);
@@ -192,9 +299,19 @@
 // }
 // const myObj = generateObj(false)
 
-// console.log(myObj?.additionalField?.newField?.test?.test)
+// console.log(myObj.additionalField?.newField)
 
+// const response = {
+//   data: {
+//     name: 'ANC',
+//     value: 123,
+//     InnerObj: {
+//       text: 'text'
+//     }
+//   }
+// }
 
+// console.log(response?.data?.InnerObj?.text)
 
 
 // const obj1 = {
