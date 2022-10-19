@@ -181,15 +181,15 @@
 // });
 
 // -------------------------ASYNC AWAIT
-const fs = require("fs"); // Do not worry for .require now, we will look on it on next lesson.
-const util = require("util");
-const readFile = util.promisify(fs.readFile);
+// const fs = require("fs"); // Do not worry for .require now, we will look on it on next lesson.
+// const util = require("util");
+// const readFile = util.promisify(fs.readFile);
 
 // async/await is special keywords to work with async operations results
 // async/await is still based on Promises
 // Lets see how we can work with async operations using async/await
 
-console.log("Reading file async 1.json");
+// console.log("Reading file async 1.json");
 // let content = await readFile("./data/1.json", { encoding: "UTF8" });
 // console.log("File content is", content);
 

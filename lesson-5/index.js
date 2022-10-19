@@ -91,143 +91,143 @@
 //   }
 
 
-class Human {
-    // constructor function will be called at object creation
-    // you don't need to put function key word
-    // constructor actualy constract your function
-    #isParent = false
-    constructor(name, favoriteFood, hoursOfSleep) {
-      // you can set any your custom properties
-      this.legs = 2;
-      this.hands = 2;
-      this.head = 1;
-      this.name = name;
-      this.favoriteFood = favoriteFood;
-      this.hoursOfSleep = hoursOfSleep || this.hoursOfSleep
-      this.#isParent = false
-    }
-    hoursOfSleep = 7
-    walk() {
-      this.someVariable = 'value'; // undefined
-      return `${this.name} is walking`;
-    };
-    eat() {
-      console.log(`${this.name} is eating ${this.favoriteFood}`);
-    };
-    sleep() {
-      console.log(`${this.name} went sleep for ${this.hoursOfSleep} hours`);
-    };
+// class Human {
+//     // constructor function will be called at object creation
+//     // you don't need to put function key word
+//     // constructor actualy constract your function
+//     #isParent = false
+//     constructor(name, favoriteFood, hoursOfSleep) {
+//       // you can set any your custom properties
+//       this.legs = 2;
+//       this.hands = 2;
+//       this.head = 1;
+//       this.name = name;
+//       this.favoriteFood = favoriteFood;
+//       this.hoursOfSleep = hoursOfSleep || this.hoursOfSleep
+//       this.#isParent = false
+//     }
+//     hoursOfSleep = 7
+//     walk() {
+//       this.someVariable = 'value'; // undefined
+//       return `${this.name} is walking`;
+//     };
+//     eat() {
+//       console.log(`${this.name} is eating ${this.favoriteFood}`);
+//     };
+//     sleep() {
+//       console.log(`${this.name} went sleep for ${this.hoursOfSleep} hours`);
+//     };
 
-    #getIsParent(){
-        return this.#isParent;
-    }
+//     #getIsParent(){
+//         return this.#isParent;
+//     }
 
-    walkAndEat() {
-        this.eat()
-        this.walk()
-        console.log(this.#getIsParent())
-      }
+//     walkAndEat() {
+//         this.eat()
+//         this.walk()
+//         console.log(this.#getIsParent())
+//       }
 
-    static parentStatic() {
-        return 'I am parent static'
-    }
-  }
+//     static parentStatic() {
+//         return 'I am parent static'
+//     }
+//   }
   
-  // Usage is still same:
-  let human1 = new Human("Mykola", "Borcht");
-//   human1.walk(999); // Mykola is walking
-//   human1.eat(); // Mykola is eating Borcht
-  human1.sleep(); // Mykola went sleep for null hours
-  human1.walkAndEat(); // Mykola went sleep for null hours
+//   // Usage is still same:
+//   let human1 = new Human("Mykola", "Borcht");
+// //   human1.walk(999); // Mykola is walking
+// //   human1.eat(); // Mykola is eating Borcht
+//   human1.sleep(); // Mykola went sleep for null hours
+//   human1.walkAndEat(); // Mykola went sleep for null hours
 
 
-  // There are no special type for Class, it is still constructor function, as we started in the begining
-  console.log(typeof Human); // function
-  // For created object it is object 
-  console.log(typeof new Human()); // object
+//   // There are no special type for Class, it is still constructor function, as we started in the begining
+//   console.log(typeof Human); // function
+//   // For created object it is object 
+//   console.log(typeof new Human()); // object
 
 
-  class Student extends Human {
-      constructor({food, name, hOfSleep, favouriteSubj, firstLove, bestFfriend}){
-          super(name, food, hOfSleep)
-          this.favouriteSubj = favouriteSubj
-          this.firstLove=firstLove
-      }
+//   class Student extends Human {
+//       constructor({food, name, hOfSleep, favouriteSubj, firstLove, bestFfriend}){
+//           super(name, food, hOfSleep)
+//           this.favouriteSubj = favouriteSubj
+//           this.firstLove=firstLove
+//       }
 
-      getMyFavouriteSubject() {
-          return this.favouriteSubj
-      }
+//       getMyFavouriteSubject() {
+//           return this.favouriteSubj
+//       }
 
-    countLegsAndHands() {
-        return this.legs + this.hands
-    }
+//     countLegsAndHands() {
+//         return this.legs + this.hands
+//     }
 
-    static testStatic() {
-        return 'I am static'
-    }
+//     static testStatic() {
+//         return 'I am static'
+//     }
 
-  }
-  const studObj = {
-    food: "Varenyky", 
-    name: "Andrii",  
-    hOfSleep: 10, 
-    favouriteSubj: 'Math', 
-    firstLove: 'Anna', 
-    bestFfriend:"Max"
-  }
+//   }
+//   const studObj = {
+//     food: "Varenyky", 
+//     name: "Andrii",  
+//     hOfSleep: 10, 
+//     favouriteSubj: 'Math', 
+//     firstLove: 'Anna', 
+//     bestFfriend:"Max"
+//   }
 
-  const student1 = new Student(studObj)
-//   console.log(student1)
-  console.log(student1.countLegsAndHands())
-  console.log(student1.getIsParent)
-//   console.log(Human.testStatic())
-//   console.log(student1.walk())
-//   console.log(student1.legs)
+//   const student1 = new Student(studObj)
+// //   console.log(student1)
+//   console.log(student1.countLegsAndHands())
+//   console.log(student1.getIsParent)
+// //   console.log(Human.testStatic())
+// //   console.log(student1.walk())
+// //   console.log(student1.legs)
 
-//   const func2 = (test, test2) => {
-//     return test + test2
+// //   const func2 = (test, test2) => {
+// //     return test + test2
+// // }
+
+// // console.log(func2(1,2,3))
+
+// const funcWithDescruct = ({name, age, gender, height}) => {
+//     console.log(name, age, gender, height)
 // }
 
-// console.log(func2(1,2,3))
-
-const funcWithDescruct = ({name, age, gender, height}) => {
-    console.log(name, age, gender, height)
-}
-
-const myObj = {
-    name: "Nick",
-     age: 123, 
-     gender: "male", 
-     height: 185,
-     innerObj: {
-         comment: 'abc'
-     }
-    }
-    const {name, age, gender, height: manHeight, innerObj: { comment }} = myObj
-    console.log(comment)
-funcWithDescruct(myObj)
+// const myObj = {
+//     name: "Nick",
+//      age: 123, 
+//      gender: "male", 
+//      height: 185,
+//      innerObj: {
+//          comment: 'abc'
+//      }
+//     }
+//     const {name, age, gender, height: manHeight, innerObj: { comment }} = myObj
+//     console.log(comment)
+// funcWithDescruct(myObj)
 
 
-let animal = {
-    eats: true
-  };
-  let rabbit = {
-    jumps: true
-  };
+// let animal = {
+//     eats: true
+//   };
+//   let rabbit = {
+//     jumps: true
+//   };
   
-  rabbit.__proto__ = animal; // (*)
+//   rabbit.__proto__ = animal; // (*)
   
-  // тепер ми можемо знайти обидві властивості в об’єкті rabbit:
-  console.log( rabbit.eats ); // true (**)
-  console.log( rabbit.jumps );
-  console.log(rabbit)
+//   // тепер ми можемо знайти обидві властивості в об’єкті rabbit:
+//   console.log( rabbit.eats ); // true (**)
+//   console.log( rabbit.jumps );
+//   console.log(rabbit)
 
-  console.log(student1)
+//   console.log(student1)
 
-  String.prototype.myNewFunc = function() {
-      return this + 'abc'
-  }
+//   String.prototype.myNewFunc = function() {
+//       return this + 'abc'
+//   }
 
-  console.log('    myStr    '.trim())
-const num = 1;
-  console.log(num.toString());
+//   console.log('    myStr    '.trim())
+// const num = 1;
+//   console.log(num.toString());
