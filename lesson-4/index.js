@@ -7,37 +7,47 @@
 //     }
 // }
 
-// console.log(Object.keys(obj1))
+// console.log(Object.keys({}))
+// const keys = Object.keys(obj1)
+// keys.forEach(key => {
+//     console.log(obj1[key])
+// })
 // console.log(Object.values(obj1))
 // console.log(Object.entries(obj1))
 
 // // 3) native loops for object and arrays `for.. in` and `for .. of`
+// const keyArray = Object.keys(obj1);
+// console.log(keyArray)
 
-// const keys = Object.keys(obj1);
-
-// for(let key in keys){
+// for(let key in keyArray){
 //     console.log(key)
-//     console.log(keys[key])
+//     console.log(keyArray[key])
 //     // keys[key] = 'QWE'
 // }
 
-// for (let value of keys){
+// for (let value of keyArray){
 //     console.log(value);
 //     // value = 'test!!!!'
 // }
-// keys
+// // keys
 
 // for(let key in obj1){
+//     console.log(key)
+// }
+
+// DONT DO THIS, FIBIDDEN AND THROWS
+// for(let key of obj1){
 //     console.log(key)
 // }
 
 //// ------------------
 
 
-// let arr = new Array();
+// let arr = new Array(3, 33, 55);
 // console.log(arr)
 
 // const fruits = ["Apple", "Orange", "Plum"];
+// const arr1 = [];
 
 // // Index is a number starts from 0
 // //  --0--     --1--     --2--
@@ -45,8 +55,9 @@
 
 // let apple = fruits[0]; // Apple
 // let orange = fruits[1]; // Orange
-// let plum = fruits[2]; 
+// let plum = fruits[fruits.length - 1]; 
 // console.log(plum)
+
 
 // fruits[2] = "Lemon";
 // console.log(fruits)
@@ -55,14 +66,20 @@
 // console.log(typeof []);
 
 // const url = 'https://some.web.page/someRoute'
+// console.log(url.split('/'))
 // console.log(url.split('/').pop())
 
 // const fruits = ["Apple", "Orange", "Pear"];
 // console.log(fruits.pop()); // remove "Pear" and print it
 // console.log(fruits);
 
+// console.log(Object.keys({}))
+// const ojb = {}
+// ojb.keys()
+
+
 // let fruits = ["Apple", "Orange"];
-// fruits.push("Pear", 2);
+// fruits.push("Pear", 2, 5,6,67);
 // // fruits[fruits.length]='Pear'
 // console.log(fruits);
 
@@ -72,7 +89,7 @@
 
 // // unshift - add element to begining
 // let fruits = ["Orange", "Pear"];
-// fruits.unshift("Apple");
+// fruits.unshift("Apple", 4,6);
 // console.log(fruits);
 
 // let fruits = []; // make an array
@@ -81,35 +98,57 @@
 // fruits[101]='qqq'  // create a property with an arbitrary name
 // console.log(fruits)
 
-// const forEachFunc = (item, index, array) => {
-//     console.log(item, index, array);
+// const forEachFunc = (item, ind, arr) => {
+//     console.log(item, ind, arr);
 // }
 
 // let arr = ["Apple", "Orange", "Pear"];
 // arr.forEach(forEachFunc);
 
-// const arrObj = [
-//     {user: 'Andrii', age: 25, school: 'high'},
-//     {user: 'Test', age: 40, school: 'middle'},
-//     {user: 'Mark', age: 32, school: 'univ'}
-// ]
-
-// const concatArr = arrObj.map((item) => ({userSchool: `${item.user} ${item.school}`, age: item.age}))
-
-// console.log(concatArr, arrObj)
+// arr.forEach(function (item) {
+//     console.log(item)
+// })
+// const arrIds = [1,2,3,4,5];
+// arrIds.forEach(id => {
+//     myApicall.sendDelete(id)
+// })
 
 
-// let arr = [10, 30, 100];
+// let arr = [10, 30, 100, 50, 19, 35, 12, 23, 11];
 
 // let newArr = arr.map(function(item, index, array) {
-//     console.log(item);
-//     return item + 10;
+//     if(item >= 50){
+//         return item * 2;
+//     } else {
+//         return item - 5;
+//     }
 // });
 // console.log(arr); // [10, 30, 100]
 // console.log(newArr);
 
 
-// let fruits = ["Apple", "Orange", "Plum", 1];
+const arrObj = [
+    {user: 'Andrii', age: 25, school: 'high', id: 'sdkjghsdjhk'},
+    {user: 'Test', age: 40, school: 'middle', id: 'sdgsdg'},
+    {user: 'Mark', age: 32, school: 'univ', id: 'sddsgsdg'}
+]
+
+// const arrRes = []
+
+// const concatArr = arrObj.map((item) => ({userSchool: `${item.user} ${item.school}`, age: item.age}))
+
+const concatArr = arrObj.map((item) => {
+        return item.id
+})
+
+console.log(concatArr, '\n' ,arrObj)
+for(const id of concatArr){
+    // delete(id)
+    console.log(id);
+}
+
+
+// let fruits = ["Apple", "Orange", "Plum", 1, "Plum"];
 // // looks for item starting from index from, and returns the index where it was found, otherwise -1.
 // let index = fruits.indexOf("Plum", 3); // 2
 // // let index = fruits.indexOf("Plumjvjhb");
@@ -123,9 +162,9 @@
 // let index = fruits.lastIndexOf("Apple");
 // console.log(index)
 
-// includes returns true if found.
+// // includes returns true if found.
 // console.log(fruits.indexOf('Apple')) // but it is agly
-// let isExist = fruits.includes("Orange"); // includes works only for prymitive types
+// let isExist = fruits.includes("Orange1"); // includes works only for prymitive types
 // console.log(isExist); // true
 
 
@@ -136,13 +175,13 @@
 // ];
 
 // let user = users.find(function(item) { // functhion inside mothod call callback function
-//     return item.id === 1;
+//     return item.id === 1 && item.age === 37;
 // });
 
 // console.log(user)
 
 // let ind = users.findIndex(function(item) {
-//     return item.id == 2;
+//     return item.id === 2;
 // });
 
 // console.log(ind); // 1
@@ -170,20 +209,26 @@
 // // returns new array that will contain only items for which function returned 'true'
 // let usersWithAge43 = users.filter(function(item) {
 //     return item.age === 43
-// }).map((item) => ({userIdName: `${item.id} ${item.name}`}))
+// }).map((item) => ({userIdName: `${item.id} ${item.name}`})).find((item, ind) => {
+//     return ind === 1;
+// })
 
 // console.log(usersWithAge43)
 
 
 
-// let arr = ["I", "study", "JavaScript"];
-// arr.splice(1, 1, 'Love', 'a lot'); // from index 1 remove 1 element
+// let arr = ["I", "study", 'SMART', "JavaScript"];
+// arr.splice(1, 2, 'Love', 'a lot'); // from index 1 remove 1 element
 // console.log(arr); // ["I", "JavaScript"]
 
 
-// let arr = ["a", "b", "c", "d"];
+
+// let arr = ["a", "b", "c", "d", 1,2,3,45];
+// const arrIndexOne = arr.indexOf('someValue');
+// const arrIndexTwo = arr.indexOf('someValueTwo');
+// console.log(arr.slice(arrIndexOne, arrIndexTwo+1))
 // console.log(arr.slice(1, 3)); // [b,c]
-// console.log(arr.slice(-2)); // [c,d]
+// console.log(arr.slice(-7)); // [c,d]
 // console.log(arr);
 
 
@@ -203,9 +248,18 @@
 // console.log(arr);
 
 // let arr = [1, 3, 2, 15, 1];
-// // the method reorders the content of arr (and returns it)
-// // modify your array
-// const arrSorted = arr.sort((a,b) => b - a);
+// the method reorders the content of arr (and returns it)
+// modify your array
+// arr.sort((a, b) => {
+//     if(a < b) {
+//         return -1
+//     } else if ( a > b){
+//         return 1;
+//     } else {
+//         return 0
+//     }
+// });
+// const arrSorted = arr.sort((a, b) => b - a);
 // console.log(arr); 
 // console.log(arrSorted)
 
@@ -214,9 +268,47 @@
 // console.log(arr)
 
 
+// const array1 = [1, 2, 3, 4];
+
+// 0 + 1 + 2 + 3 + 4
+// const initialValue = 95;
+// const sumWithInitial = array1.reduce(
+//   (acc, curr) => acc + curr,
+//   initialValue
+// );
+
+// function reducer(acc, curr) {
+//     return acc + curr
+// }
+
+// const sumWithInitial = array1.reduce(
+//     reducer,
+//     initialValue
+//   );
+
+// console.log(sumWithInitial);
+
+//MULTIPLE LAYERS ARRAYS;
+// const arrMultipleLevel = [[1,2,3], [55,6,7], ['s', 'b', 'c',[1,2,3,4,5,6, [{BUY: 'SELL'}]]]]
+
+// console.log(arrMultipleLevel[2][3][6][0]['BUY'])
+
+// const matrix = [[1, 5, 7], [8, 9, 0], [5, 7, 3]]
+
+
+
+// const functionError = (bool) => {
+//     if(bool){
+//         throw new Error('Made up error');
+//     }
+//     console.log('TEEST');
+// }
+
+
 // try {
 //     console.log("Start of try runs");
-//     nonvariable; // error, variable is not defined!
+//     // nonvariable; // error, variable is not defined!
+//     functionError(true)
 //     console.log("End of try (never reached)"); // try block interupted, so this never be executed
 //   } catch (error) {
 //     console.log(`Error has occured!`);
@@ -224,11 +316,11 @@
 //     if(error = ''){
 //         throw new Error('1')
 //     }
-//     throw new Error('This does not work')
+//     // throw new Error('This does not work')
 //   } finally {
-//         console.log('ANWAYS')
+//     console.log('ANYWAYS WORKS!!!')
 //   }
-//   console.log("...Then the execution continues");
+//   console.log('.. code continues')
 
 
 //   try {
