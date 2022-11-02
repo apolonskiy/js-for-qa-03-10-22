@@ -5,3 +5,7 @@ let myjson = require("./1.json");
 // so you dont need to use JSON.parse
 
 console.log("Got specialization", myjson.specialization);
+
+// let exportsObj = require("./export");
+
+// console.log(exportsObj.bob.name);
